@@ -1,9 +1,10 @@
 *
+!*/
 
 # Allow specific folders:
-!hypr/
-!waybar/
-!fuzzel/
-!kitty/
+!hypr/**
+!waybar/**
+!fuzzel/**
+!kitty/**
 
 !.gitignore
