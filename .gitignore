@@ -1,0 +1,9 @@
+*
+
+# Allow specific folders:
+!hypr/
+!waybar/
+!fuzzel/
+!kitty/
+
+!.gitignore
