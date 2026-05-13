@@ -6,5 +6,6 @@
 !waybar/**
 !fuzzel/**
 !kitty/**
+!starship.toml
 
 !.gitignore

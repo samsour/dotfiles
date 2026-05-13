@@ -1,0 +1,44 @@
+# ~/.config/starship.toml
+
+# Zeilenumbruch nach dem Prompt deaktivieren für einen kompakteren Look
+add_newline = false
+
+# Reihenfolge der Elemente im Terminal festlegen
+format = """
+$directory\
+$git_branch\
+$git_status\
+$character\
+"""
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+format = "[$path]($style) "
+style = "bold white"
+
+[character]
+success_symbol = "[❯](bold white)"
+error_symbol = "[❯](bold red)"
+
+[git_branch]
+symbol = " "
+format = "on [$symbol$branch]($style) "
+style = "bold fixed_gray"
+
+[git_status]
+format = "([$all_status$ahead_behind]($style) )"
+style = "bold white"
+conflicted = "="
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = "?"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+# Farbpalette für echtes Schwarz-Weiß definieren
+[palettes.monochrome]
+fixed_gray = "#666666"
