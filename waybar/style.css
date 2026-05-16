@@ -103,3 +103,27 @@ window#waybar {
     margin: 0 0px 0 15px;
     padding: 0 15px 0 15px; 
 }
+
+#custom-gamepads {
+    color: @color4; 
+    background-color: @background; 
+    margin: 0 15px 0 0px;
+    padding: 0 15px 0 15px; 
+}
+
+
+#bluetooth {
+    color: @color5; 
+    background-color: @background; 
+    margin: 0 15px 0 0px;
+    padding: 0 15px 0 15px; 
+}
+
+/* Optionale visuelle Stati */
+#bluetooth.connected {
+    color: @color4; /* Ändert die Textfarbe zu einer anderen Wal-Farbe, wenn verbunden */
+}
+
+#bluetooth.disabled {
+    color: rgba(120, 120, 120, 0.5); /* Blendet das Icon leicht aus, wenn Bluetooth aus ist */
+}

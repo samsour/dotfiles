@@ -15,6 +15,8 @@
     "memory",
     "temperature",
     "pulseaudio",
+    "bluetooth",
+    "custom/gamepads",
     "battery",
     "network"
   ],
@@ -54,6 +56,12 @@
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
     "exec": "$HOME/.config/waybar/scripts/mediaplayer.py"
+  },
+  "custom/gamepads": {
+	"exec": "echo \"🎮 $(ls /dev/input/js* 2>/dev/null | wc -l) connected\"",
+    	"interval": 5,
+    	"format": "{}",
+    	"tooltip": false
   },
   "battery": {
     "format": "{icon}  {capacity}%",
@@ -96,6 +104,17 @@
         "  "
       ]
     }
+  },
+  "bluetooth": {
+      "format": " {status}",
+      "format-disabled": " off",
+      "format-connected": " {num_connections} ok",
+      "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+      "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} verbunden",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} verbunden\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+      "on-click": "blueman-manager"
   },
   "network": {
     "format": "{ifname}",
