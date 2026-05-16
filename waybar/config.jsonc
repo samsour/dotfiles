@@ -1,4 +1,4 @@
-{
+aaa{
   "layer": "top",
   "position": "top",
   "margin-top": 13,
@@ -23,7 +23,8 @@
   "on-click": "~/.config/hypr/scripts/volume-popup.sh",
   "cpu": {
     "format": "\uf2db {usage}%",
-    "interval": 2
+    "interval": 2,
+    "on-click": "kitty -e btop"
   },
   "memory": {
     "format": " {used:0.1f}G",
@@ -58,10 +59,11 @@
     "exec": "$HOME/.config/waybar/scripts/mediaplayer.py"
   },
   "custom/gamepads": {
-	"exec": "echo \"🎮 $(ls /dev/input/js* 2>/dev/null | wc -l) connected\"",
+	"exec": "echo \"  $(ls /dev/input/js* 2>/dev/null | wc -l)\"",
     	"interval": 5,
     	"format": "{}",
-    	"tooltip": false
+    	"tooltip": false,
+        "on-click": "steam" 
   },
   "battery": {
     "format": "{icon}  {capacity}%",
@@ -83,28 +85,31 @@
     "format": "\uf303       {:%I:%M %p}",
     "format-alt": "\uf303       {:%a, %d. %b  %I:%M %p}"
   },
-  "pulseaudio": {
+
+    "pulseaudio": {
     "format": "{icon}  {volume}%",
-    "format-bluetooth": "    {volume}%",
-    "format-muted": "  ",
+    "format-bluetooth": "\uF0293 {icon}  {volume}%",
+    "format-muted": "\uF057E Muted",
     "scroll-step": 1,
     "on-click": "pavucontrol",
     "ignored-sinks": [
       "Easy Effects Sink"
     ],
     "format-icons": {
-      "headphone": "\uf025  ",
-      "hands-free": "\uf590 ",
-      "headset": "   ",
-      "phone": "\uf095 ",
-      "portable": "\uf095 ",
-      "car": "\uf1b9",
+      "headphone": "\uF025 ",
+      "hands-free": "\uF590 ",
+      "headset": "\uF810 ",
+      "phone": "\uF095 ",
+      "portable": "\uF095 ",
+      "car": "\uF1B9",
       "default": [
-        "  ",
-        "  "
+        "\uF026",
+        "\uF027",
+        "\uF028"
       ]
     }
   },
+
   "bluetooth": {
       "format": " {status}",
       "format-disabled": " off",
@@ -119,7 +124,7 @@
   "network": {
     "format": "{ifname}",
     "format-wifi": "{icon} {essid}",
-    "format-ethernet": "{bandwidthDownBits:>10}",
+    "format-ethernet": "  {bandwidthDownBits:>10}",
     "format-disconnected": "disconnected",
     "max-length": 50,
     "format-icons": [
@@ -144,7 +149,7 @@
       "4": "4",
       "5": "5",
       "urgent": "  ",
-      "default": "\uf111"
+      "default": "\uF111"
     },
     "sort-by-number": true
   },
@@ -152,6 +157,6 @@
     "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
     "format": "gpu {}%",
     "interval": 2,
-    "tooltip": false
+    "tooltip": false,
   }
 }
