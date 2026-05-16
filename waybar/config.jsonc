@@ -22,11 +22,11 @@
   ],
   "on-click": "~/.config/hypr/scripts/volume-popup.sh",
   "cpu": {
-    "format": "\uf2db   {usage}%",
+    "format": "\uf2db {usage}%",
     "interval": 2
   },
   "memory": {
-    "format": "     {used:0.1f}G",
+    "format": " {used:0.1f}G",
     "interval": 3
   },
   "temperature": {
@@ -118,16 +118,16 @@
   },
   "network": {
     "format": "{ifname}",
-    "format-wifi": "{icon}   {essid}",
-    "format-ethernet": "       {bandwidthDownBits:>10}",
-    "format-disconnected": "     disconnected",
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "{bandwidthDownBits:>10}",
+    "format-disconnected": "disconnected",
     "max-length": 50,
     "format-icons": [
-      "  ",
-      "  ",
-      "  ",
-      "  ",
-      "  "
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨",
+      "󰤨"
     ],
     "interval": 2
   },
@@ -150,7 +150,7 @@
   },
   "custom/gpu": {
     "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
-    "format": "     {}%",
+    "format": "gpu {}%",
     "interval": 2,
     "tooltip": false
   }
